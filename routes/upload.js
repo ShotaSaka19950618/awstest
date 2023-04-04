@@ -1,9 +1,9 @@
 const router = require("express").Router();
 const isAuth = require("../middleware/isAuth");
-const uploadImage = require("../middleware/fileUpload");
+const fileUpload = require("../middleware/fileUpload");
 
 // 画像upload
-router.post("/", isAuth, uploadImage.single("file"), (req, res) => {
+router.post("/", isAuth, fileUpload.single("file"), (req, res) => {
   try {
     return res.json({
       success: true,

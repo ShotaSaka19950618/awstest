@@ -7,7 +7,7 @@ const userRouter = require("./routes/users");
 const postRouter = require("./routes/posts");
 const notificationRouter = require("./routes/notifications");
 const authRouter = require("./routes/auth");
-// const uploadRouter = require("./routes/upload");
+const uploadRouter = require("./routes/upload");
 require("dotenv").config();
 
 // CORS対策
@@ -31,6 +31,7 @@ app.use("/api/users", userRouter);
 app.use("/api/posts", postRouter);
 app.use("/api/notifications", notificationRouter);
 app.use("/api/auth", authRouter);
+app.use("/api/upload", uploadRouter);
 
 app.get("/", (req, res) => {
   res.send("Hello World");
