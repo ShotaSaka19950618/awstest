@@ -17,14 +17,14 @@ app.use(cors());
 app.use(helmet());
 
 // データベース接続
-mongoose
-  .connect(process.env.MONGOURL)
-  .then(() => {
-    console.log("DB接続中・・・");
-  })
-  .catch((err) => {
-    console.log(err);
-  });
+// mongoose
+//   .connect(process.env.MONGOURL)
+//   .then(() => {
+//     console.log("DB接続中・・・");
+//   })
+//   .catch((err) => {
+//     console.log(err);
+//   });
 
 app.use(express.json());
 
