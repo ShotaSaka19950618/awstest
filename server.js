@@ -3,10 +3,10 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 const helmet = require("helmet");
 const app = express();
-// const userRouter = require("./routes/users");
-// const postRouter = require("./routes/posts");
-// const notificationRouter = require("./routes/notifications");
-// const authRouter = require("./routes/auth");
+const userRouter = require("./routes/users");
+const postRouter = require("./routes/posts");
+const notificationRouter = require("./routes/notifications");
+const authRouter = require("./routes/auth");
 // const uploadRouter = require("./routes/upload");
 require("dotenv").config();
 
@@ -27,6 +27,10 @@ mongoose
   });
 
 app.use(express.json());
+app.use("/api/users", userRouter);
+app.use("/api/posts", postRouter);
+app.use("/api/notifications", notificationRouter);
+app.use("/api/auth", authRouter);
 
 app.get("/", (req, res) => {
   res.send("Hello World");
