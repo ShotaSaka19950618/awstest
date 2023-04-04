@@ -8,23 +8,12 @@ const authRouter = require("./routes/auth");
 const uploadRouter = require("./routes/upload");
 const mongoose = require("mongoose");
 const helmet = require("helmet");
-require("dotenv").config();
 
 // CORS対策
 app.use(cors());
 
 // 脆弱性対策
 app.use(helmet());
-
-// データベース接続
-// mongoose
-//   .connect(process.env.MONGOURL)
-//   .then(() => {
-//     console.log("DB接続中・・・");
-//   })
-//   .catch((err) => {
-//     console.log(err);
-//   });
 
 app.use(express.json());
 
