@@ -6,14 +6,8 @@ const postRouter = require("./routes/posts");
 const notificationRouter = require("./routes/notifications");
 const authRouter = require("./routes/auth");
 const uploadRouter = require("./routes/upload");
-const mongoose = require("mongoose");
-const helmet = require("helmet");
 
-// CORS対策
-app.use(cors());
 
-// 脆弱性対策
-app.use(helmet());
 
 app.use(express.json());
 
